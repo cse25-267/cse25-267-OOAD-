@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="12.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CustomerController">
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+   <children>
+      <Label style="-fx-font-weight: bold; -fx-font-size: 15;" text="Add customer" />
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label text="Type" />
+            <ComboBox fx:id="typeCombo" onAction="#onTypeChanged" prefWidth="130.0" />
+            <Label text="Customer ID" />
+            <TextField fx:id="idField" prefWidth="110.0" promptText="e.g. C002" />
+            <Label text="Address" />
+            <TextField fx:id="addressField" prefWidth="260.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox fx:id="individualBox" alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label text="First name" />
+            <TextField fx:id="firstNameField" prefWidth="180.0" />
+            <Label text="Surname" />
+            <TextField fx:id="surnameField" prefWidth="180.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="companyBox" alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label text="Company name" />
+            <TextField fx:id="companyField" prefWidth="300.0" />
+         </children>
+      </HBox>
+      <HBox spacing="10.0">
+         <children>
+            <Button onAction="#onAddCustomer" text="Add customer" />
+            <Button onAction="#onClear" text="Clear" />
+         </children>
+      </HBox>
+      <Separator />
+      <Label style="-fx-font-weight: bold; -fx-font-size: 15;" text="Customers" />
+      <TableView fx:id="customersTable" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="120.0" text="Customer ID" />
+            <TableColumn fx:id="nameCol" prefWidth="250.0" text="Name" />
+            <TableColumn fx:id="typeCol" prefWidth="120.0" text="Type" />
+            <TableColumn fx:id="addressCol" prefWidth="300.0" text="Address" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</VBox>

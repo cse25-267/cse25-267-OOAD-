@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="14.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+   <children>
+      <Label style="-fx-font-size: 22; -fx-font-weight: bold;" text="Banking System" />
+      <Label text="Please log in" />
+      <TextField fx:id="usernameField" maxWidth="240.0" promptText="Username" />
+      <PasswordField fx:id="passwordField" maxWidth="240.0" onAction="#onLogin" promptText="Password" />
+      <Button onAction="#onLogin" text="Log in" />
+   </children>
+</VBox>
